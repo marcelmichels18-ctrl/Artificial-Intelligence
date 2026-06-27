@@ -7,16 +7,16 @@ from pydantic import BaseModel, Field
 app = FastAPI(title="Car Price Prediction API")
 
 # --- Artefakte beim Start laden ---
-model = joblib.load("C:\\Users\\nickp\\Desktop\\AI Modell Trainingsdaten\\Sprachmodell\\model.joblib")
-scaler = joblib.load("C:\\Users\\nickp\\Desktop\\AI Modell Trainingsdaten\\Sprachmodell\\scaler.joblib")
+model = joblib.load("model.joblib")
+scaler = joblib.load("scaler.joblib")
 
-with open("C:\\Users\\nickp\\Desktop\\AI Modell Trainingsdaten\\Sprachmodell\\feature_columns.json") as f:
+with open("feature_columns.json") as f:
     FEATURE_COLUMNS = json.load(f)
 
-with open("C:\\Users\\nickp\\Desktop\\AI Modell Trainingsdaten\\Sprachmodell\\category_values.json") as f:
+with open("category_values.json") as f:
     CATEGORY_VALUES = json.load(f)
 
-with open("C:\\Users\\nickp\\Desktop\\AI Modell Trainingsdaten\\Sprachmodell\\numeric_columns.json") as f:
+with open("numeric_columns.json") as f:
     NUMERIC_COLUMNS = json.load(f)
 
 CAT_COLS = list(CATEGORY_VALUES.keys())
